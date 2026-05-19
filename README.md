@@ -1,8 +1,8 @@
 # Gitbank Playground
 
-Test the Gitbank bot here. Run real commands on Base Sepolia testnet with no real money involved.
+Test the Gitbank bot here. Commands execute on **Base mainnet** with real USDC and WETH.
 
-> **Testnet only.** Tokens in this environment have no monetary value. Safe to experiment freely.
+> **Warning.** This is mainnet. Tokens have real monetary value. Only use amounts you are comfortable spending on testing.
 
 ---
 
@@ -25,21 +25,23 @@ in GitHub Issues, PRs, and Discussions. No wallet popups, no gas fees for users.
 Open any Issue or Discussion in this repo and write a comment mentioning `@gitbankbot`.
 The bot will deploy your vault automatically on your first command. No DApp visit required.
 
-**Step 2: Get testnet tokens**
+**Step 2: Bridge assets to Base mainnet**
 
-You need testnet USDC or WETH on Base Sepolia. Free faucets:
-- [USDC faucet](https://faucet.circle.com) (select Base Sepolia)
-- [Base Sepolia ETH faucet](https://www.alchemy.com/faucets/base-sepolia) (then wrap to WETH at app.uniswap.org)
+You need USDC or WETH on Base mainnet. Bridge options:
+- [Coinbase Bridge](https://bridge.coinbase.com) (ETH or USDC)
+- [Superbridge](https://superbridge.app/base) (ETH, then swap to WETH/USDC on Uniswap)
+
+Already on Base? Skip this step.
 
 **Step 3: Run a command**
 
 Write a comment mentioning `@gitbankbot` in any Issue or Discussion:
 
 ```
-@gitbankbot deposit 10 USDC
+@gitbankbot deposit 1 USDC
 ```
 
-The bot reads your comment, executes the transaction, and replies with a receipt.
+The bot reads your comment, executes the transaction on Base mainnet, and replies with a receipt and Basescan link.
 
 ---
 
@@ -47,9 +49,9 @@ The bot reads your comment, executes the transaction, and replies with a receipt
 
 ```
 @gitbankbot balance
-@gitbankbot deposit 10 USDC
-@gitbankbot deposit 0.005 WETH
-@gitbankbot withdraw 5 USDC to 0xYourWalletAddress
+@gitbankbot deposit 1 USDC
+@gitbankbot deposit 0.001 WETH
+@gitbankbot withdraw 0.5 USDC to 0xYourWalletAddress
 @gitbankbot swap 0.001 WETH to USDC
 @gitbankbot help
 @gitbankbot cancel
